@@ -38,7 +38,7 @@ jobs:
       run: mv index.html 200.html  
     - name: Run Surge
       working-directory: './build'
-      run: surge ./ hasanza-covid190-tracker.surge.sh --token ${{secrets.MY_SURGE_TOKEN}}
+      run: surge ./ hasanza-covid19-tracker.surge.sh --token ${{secrets.MY_SURGE_TOKEN}}
     - name: show files
       working-directory: './build'
       run: ls
