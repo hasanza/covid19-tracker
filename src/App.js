@@ -9,7 +9,7 @@ const App = () => {
   
   const [data, setData] = React.useState({});
   const [country, setCountry] = React.useState("");
-  const [loading, setLoading] = React.useState(false);
+  
 
   const handleCountryChange = async (country) => {
     const fetchedData = await fetchData(country);
@@ -21,11 +21,11 @@ const App = () => {
 
   //set data received from fetchData as data state
   React.useEffect(() => {
-    setLoading(true);
+    
     const receiveData = async () => {
       const result = await fetchData();
       setData(result);
-      setLoading(false);
+      
     };
     receiveData();
   }, []);
@@ -38,7 +38,7 @@ const App = () => {
       <CountryPicker handleCountryChange={handleCountryChange} />
       <Chart data={data} country={country}/>
       <hr/>
-      <h3 style={{color: 'navy'}}>Made with ❤️ by <a href="github.com/hasanza">Hasan Raza</a></h3>
+      <h3 style={{color: 'navy'}}>Made with <span role="img" aria-label="heart emoji">❤️</span> by <a href="github.com/hasanza">Hasan Raza</a></h3>
     </div>
   ); 
 };
