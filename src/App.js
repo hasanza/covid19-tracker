@@ -2,7 +2,7 @@ import React from "react";
 import { Cards, Chart, CountryPicker, Header } from "./components";
 import styles from "./App.module.css";
 import { fetchData } from "./api";
-import {LinearProgress, makeStyles} from '@material-ui/core'
+
 
 
 const App = () => {
@@ -34,9 +34,6 @@ const App = () => {
   return (
     <div className={styles.container}>
       <Header />
-      {loading ? (
-        <LinearProgress color="secondary"/>
-      ) : (null)}
       <Cards data={data} />
       <CountryPicker handleCountryChange={handleCountryChange} />
       <Chart data={data} country={country}/>
